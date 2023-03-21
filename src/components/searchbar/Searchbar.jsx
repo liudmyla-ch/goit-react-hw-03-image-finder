@@ -15,7 +15,10 @@ class Searchbar extends Component {
       return;
     }
     this.props.onSubmit(value.trim());
+    this.setState({ value: '' });
+    evt.target.elements.searchInput.blur();
   };
+
   onChangeInput = evt => {
     const value = evt.target.value.toLowerCase();
     this.setState({ value });
@@ -31,11 +34,13 @@ class Searchbar extends Component {
 
           <input
             onChange={this.onChangeInput}
+            value={this.state.value}
             className={css.input}
             type="text"
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
+            name="searchInput"
           />
         </form>
       </header>
