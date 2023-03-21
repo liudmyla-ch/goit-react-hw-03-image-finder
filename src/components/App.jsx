@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 import ImageGallery from './image-gallery/ImageGallery';
 import Modal from './modal/Modal';
+import PropTypes from 'prop-types';
 
 import Searchbar from './searchbar/Searchbar';
 
 export class App extends Component {
+
+  static propTypes = {
+    value: PropTypes.string,
+    collection: PropTypes.arrayOf(PropTypes.object),
+    loading: PropTypes.bool,
+    perPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    showModal: PropTypes.bool,
+    modalImg: PropTypes.string,
+    alt: PropTypes.string,
+    };
+
+    
   state = {
     value: '',
     collection: null,
