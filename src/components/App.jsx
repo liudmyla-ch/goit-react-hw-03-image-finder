@@ -29,7 +29,7 @@ export class App extends Component {
         .finally(() => {
           this.setState({ loading: false });
         });
-    }, 1000);
+    }, 500);
   };
   componentDidUpdate(prevProps, prevState) {
     const { perPage, value } = this.state;
